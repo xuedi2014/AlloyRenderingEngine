@@ -1,0 +1,623 @@
+{
+    "project": {},
+    "files": {
+        "src\\are\\display\\Bitmap.js": {
+            "name": "src\\are\\display\\Bitmap.js",
+            "modules": {},
+            "classes": {
+                "Bitmap": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\display\\Container.js": {
+            "name": "src\\are\\display\\Container.js",
+            "modules": {},
+            "classes": {
+                "Container": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\display\\DisplayObject.js": {
+            "name": "src\\are\\display\\DisplayObject.js",
+            "modules": {},
+            "classes": {
+                "DisplayObject": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\display\\Particle.js": {
+            "name": "src\\are\\display\\Particle.js",
+            "modules": {},
+            "classes": {
+                "Particle": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\display\\ParticleSystem.js": {
+            "name": "src\\are\\display\\ParticleSystem.js",
+            "modules": {},
+            "classes": {
+                "ParticleSystem": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\display\\Shape.js": {
+            "name": "src\\are\\display\\Shape.js",
+            "modules": {},
+            "classes": {
+                "Shape": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\display\\Sprite.js": {
+            "name": "src\\are\\display\\Sprite.js",
+            "modules": {},
+            "classes": {
+                "Sprite": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\display\\Stage.js": {
+            "name": "src\\are\\display\\Stage.js",
+            "modules": {},
+            "classes": {
+                "Stage": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\display\\Txt.js": {
+            "name": "src\\are\\display\\Txt.js",
+            "modules": {},
+            "classes": {
+                "Txt": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\util\\Dom.js": {
+            "name": "src\\are\\util\\Dom.js",
+            "modules": {},
+            "classes": {
+                "Dom": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\util\\FPS.js": {
+            "name": "src\\are\\util\\FPS.js",
+            "modules": {},
+            "classes": {
+                "FPS": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\util\\Loader.js": {
+            "name": "src\\are\\util\\Loader.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\util\\RAF.js": {
+            "name": "src\\are\\util\\RAF.js",
+            "modules": {},
+            "classes": {
+                "RAF": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\util\\TWEEN.js": {
+            "name": "src\\are\\util\\TWEEN.js",
+            "modules": {},
+            "classes": {
+                "TWEEN": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\util\\Util.js": {
+            "name": "src\\are\\util\\Util.js",
+            "modules": {},
+            "classes": {
+                "Loader": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\are\\util\\Vector2.js": {
+            "name": "src\\are\\util\\Vector2.js",
+            "modules": {},
+            "classes": {
+                "Vector2": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "Bitmap": {
+            "name": "Bitmap",
+            "shortname": "Bitmap",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\display\\Bitmap.js",
+            "line": 1,
+            "description": "位图，继承自DisplayObject",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "image",
+                    "description": "",
+                    "type": "Image"
+                }
+            ]
+        },
+        "Container": {
+            "name": "Container",
+            "shortname": "Container",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\display\\Container.js",
+            "line": 1,
+            "description": "容器，继承自DisplayObject",
+            "is_constructor": 1
+        },
+        "DisplayObject": {
+            "name": "DisplayObject",
+            "shortname": "DisplayObject",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\display\\DisplayObject.js",
+            "line": 1,
+            "description": "显示对象的基类",
+            "is_constructor": 1
+        },
+        "Particle": {
+            "name": "Particle",
+            "shortname": "Particle",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\display\\Particle.js",
+            "line": 1,
+            "description": "拥有运动相关属性和纹理的粒子",
+            "is_constructor": 1
+        },
+        "ParticleSystem": {
+            "name": "ParticleSystem",
+            "shortname": "ParticleSystem",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\display\\ParticleSystem.js",
+            "line": 1,
+            "description": "粒子系统",
+            "is_constructor": 1
+        },
+        "Shape": {
+            "name": "Shape",
+            "shortname": "Shape",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\display\\Shape.js",
+            "line": 1,
+            "description": "矢量图形",
+            "is_constructor": 1
+        },
+        "Sprite": {
+            "name": "Sprite",
+            "shortname": "Sprite",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\display\\Sprite.js",
+            "line": 1,
+            "description": "精灵，继承自DisplayObject，具体的使用例子如下：\n\n            var sprite = new Sprite({\n               x: 200,\n               y: 200,\n               framerate: 5,\n               imgs: [ld.get(\"hero\"), ld.get(\"pig\")],\n               frames: [\n                       // x, y, width, height, imageIndex, originX, originY               \n                       [64, 64, 64, 64],\n                       [128, 64, 64, 64],\n                       [192, 64, 64, 64],\n                       [256, 64, 64, 64],\n                       [320, 64, 64, 64],\n                       [384, 64, 64, 64],\n                       [448, 64, 64, 64],\n\t\t\t\t\t\t   [0, 192, 64, 64],\n\t\t\t\t\t\t   [64, 192, 64, 64],\n                       [128, 192, 64, 64],\n                       [192, 192, 64, 64],\n                       [256, 192, 64, 64],\n                       [320, 192, 64, 64],\n                       [384, 192, 64, 64],\n                       [448, 192, 64, 64],\n\t\t\t\t\t\t   [448, 192, 64, 64]\n               ],\n               animations: {\n                   walk: {\n                       frames: [0, 1, 2, 3, 4, 5, 6],\n                       next: \"run\",\n                       speed: 2,\n                       loop: false\n                   },\n                   happy: {\n                       frames: [11, 12, 13, 14]\n                   },\n                   win: {\n                       frames: [7, 8, 9, 10]\n                   }\n               },\n               currentAnimation: \"walk\",\n               tickAnimationEnd: function () {\n                   console.log(\"播完一轮\");\n               },\n               animationEnd: function () {\n                   alert(\"播放完成\")\n               }\n           });\n           stage.add(sprite);",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "option",
+                    "description": "",
+                    "type": "Option"
+                }
+            ]
+        },
+        "Stage": {
+            "name": "Stage",
+            "shortname": "Stage",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\display\\Stage.js",
+            "line": 1,
+            "description": "位图，继承自Container",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "canvas",
+                    "description": "",
+                    "type": "Canvas"
+                },
+                {
+                    "name": "closeWebGL",
+                    "description": "",
+                    "type": "Bool"
+                }
+            ]
+        },
+        "Txt": {
+            "name": "Txt",
+            "shortname": "Txt",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\display\\Txt.js",
+            "line": 3,
+            "description": "文本对象",
+            "is_constructor": 1
+        },
+        "Dom": {
+            "name": "Dom",
+            "shortname": "Dom",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\util\\Dom.js",
+            "line": 1,
+            "description": "Dom操作",
+            "is_constructor": 1
+        },
+        "FPS": {
+            "name": "FPS",
+            "shortname": "FPS",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\util\\FPS.js",
+            "line": 1,
+            "description": "位图，继承自DisplayObject",
+            "is_constructor": 1
+        },
+        "Loader": {
+            "name": "Loader",
+            "shortname": "Loader",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\util\\Util.js",
+            "line": 1,
+            "description": "资源加载器",
+            "is_constructor": 1
+        },
+        "RAF": {
+            "name": "RAF",
+            "shortname": "RAF",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\util\\RAF.js",
+            "line": 1,
+            "description": "渐进增强的定时器",
+            "is_constructor": 1
+        },
+        "TWEEN": {
+            "name": "TWEEN",
+            "shortname": "TWEEN",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\util\\TWEEN.js",
+            "line": 1,
+            "description": "缓动",
+            "is_constructor": 1
+        },
+        "Vector2": {
+            "name": "Vector2",
+            "shortname": "Vector2",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\are\\util\\Vector2.js",
+            "line": 1,
+            "description": "2d向量",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "src\\are\\display\\Bitmap.js",
+            "line": 15,
+            "description": "设置滤镜",
+            "itemtype": "method",
+            "name": "setFilter",
+            "params": [
+                {
+                    "name": "r",
+                    "description": "- 红.",
+                    "type": "Num"
+                },
+                {
+                    "name": "g",
+                    "description": "- 绿.",
+                    "type": "Num"
+                },
+                {
+                    "name": "b",
+                    "description": "- 蓝.",
+                    "type": "Num"
+                },
+                {
+                    "name": "a",
+                    "description": "- 透明度.",
+                    "type": "Num"
+                }
+            ],
+            "class": "Bitmap"
+        },
+        {
+            "file": "src\\are\\display\\Container.js",
+            "line": 14,
+            "description": "添加子元素（也支持同时添加多个子元素，那么就传递多个参数）",
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "子元素",
+                    "description": "",
+                    "type": "DisplayObject"
+                }
+            ],
+            "class": "Container"
+        },
+        {
+            "file": "src\\are\\display\\Container.js",
+            "line": 37,
+            "description": "移除子元素（也支持同时移除多个子元素，那么就传递多个参数）",
+            "itemtype": "method",
+            "name": "remove",
+            "params": [
+                {
+                    "name": "子元素",
+                    "description": "",
+                    "type": "DisplayObject"
+                }
+            ],
+            "class": "Container"
+        },
+        {
+            "file": "src\\are\\display\\Container.js",
+            "line": 65,
+            "description": "克隆",
+            "itemtype": "method",
+            "name": "clone",
+            "class": "Container"
+        },
+        {
+            "file": "src\\are\\display\\Container.js",
+            "line": 80,
+            "description": "移除容器内所有元素",
+            "itemtype": "method",
+            "name": "removeAll",
+            "class": "Container"
+        },
+        {
+            "file": "src\\are\\display\\DisplayObject.js",
+            "line": 39,
+            "description": "判断是否可见",
+            "itemtype": "method",
+            "name": "isVisible",
+            "return": {
+                "description": "如果可见返回true，否则返回false",
+                "type": "Boolean"
+            },
+            "class": "DisplayObject"
+        },
+        {
+            "file": "src\\are\\display\\DisplayObject.js",
+            "line": 47,
+            "description": "To subscribe to multiple events at once, pass an object as the first\nargument, where the key:value pairs correspond to the eventName:callback.\n\n     this.on({\n         \"attrChange\" : this._onAttrChange,\n         \"change\"     : this._onChange\n     });\n\nYou can also pass an array of event names as the first argument to\nsubscribe to all listed events with the same callback.\n\n     this.on([ \"change\", \"attrChange\" ], this._onChange);\n\nReturning `false` from a callback is supported as an alternative to\ncalling `e.preventDefault(); e.stopPropagation();`.  However, it is\nrecommended to use the event methods whenever possible.\n\n绑定事件",
+            "itemtype": "method",
+            "name": "on",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "- 绑定的事件类型.",
+                    "type": "String"
+                },
+                {
+                    "name": "fn",
+                    "description": "- 事件触发的回调函数.",
+                    "type": "Function"
+                }
+            ],
+            "class": "DisplayObject"
+        },
+        {
+            "file": "src\\are\\display\\DisplayObject.js",
+            "line": 91,
+            "description": "克隆",
+            "itemtype": "method",
+            "name": "clone",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "src\\are\\display\\DisplayObject.js",
+            "line": 115,
+            "description": "缓存",
+            "itemtype": "method",
+            "name": "cache",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "src\\are\\display\\DisplayObject.js",
+            "line": 135,
+            "description": "清除缓存",
+            "itemtype": "method",
+            "name": "uncache",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "src\\are\\display\\DisplayObject.js",
+            "line": 142,
+            "description": "获取包围盒",
+            "itemtype": "method",
+            "name": "getBound",
+            "class": "DisplayObject"
+        },
+        {
+            "file": "src\\are\\display\\Shape.js",
+            "line": 15,
+            "description": "设置包围盒",
+            "itemtype": "method",
+            "name": "getBound",
+            "class": "Shape"
+        },
+        {
+            "file": "src\\are\\display\\Shape.js",
+            "line": 44,
+            "description": "关闭路径",
+            "itemtype": "method",
+            "name": "",
+            "class": "Shape"
+        },
+        {
+            "file": "src\\are\\display\\Sprite.js",
+            "line": 89,
+            "description": "继续播放（一般在暂停的时候可以调用该函数可继续）",
+            "itemtype": "method",
+            "name": "play",
+            "class": "Sprite"
+        },
+        {
+            "file": "src\\are\\display\\Sprite.js",
+            "line": 96,
+            "description": "暂停播放（一般在播放的时候可以调用该函数可暂停）",
+            "itemtype": "method",
+            "name": "stop",
+            "class": "Sprite"
+        },
+        {
+            "file": "src\\are\\display\\Sprite.js",
+            "line": 109,
+            "description": "跳到某个动画并播放一定次数",
+            "itemtype": "method",
+            "name": "gotoAndPlay",
+            "params": [
+                {
+                    "name": "animation",
+                    "description": "播放的动画名称",
+                    "type": "String"
+                },
+                {
+                    "name": "times",
+                    "description": "播放的次数，该参数可选，不传的时候代表循环播放",
+                    "type": "Num"
+                }
+            ],
+            "class": "Sprite"
+        },
+        {
+            "file": "src\\are\\display\\Sprite.js",
+            "line": 149,
+            "description": "跳到某个动画的第一帧并停止",
+            "itemtype": "method",
+            "name": "gotoAndStop",
+            "params": [
+                {
+                    "name": "animation",
+                    "description": "播放的动画名称",
+                    "type": "String"
+                }
+            ],
+            "class": "Sprite"
+        },
+        {
+            "file": "src\\are\\display\\Stage.js",
+            "line": 60,
+            "description": "更新舞台",
+            "itemtype": "method",
+            "name": "update",
+            "class": "Stage"
+        },
+        {
+            "file": "src\\are\\display\\Stage.js",
+            "line": 161,
+            "description": "注册循环时要执行的函数",
+            "itemtype": "method",
+            "name": "update",
+            "class": "Stage"
+        },
+        {
+            "file": "src\\are\\util\\FPS.js",
+            "line": 8,
+            "description": "静态方法get\n\n要获取FPS，直接在你的游戏或者应用的core loop中使用下面代码：\n\n         FPS.get();",
+            "itemtype": "method",
+            "name": "get",
+            "class": "FPS"
+        },
+        {
+            "file": "src\\are\\util\\RAF.js",
+            "line": 48,
+            "description": "Behaves the same as clearInterval except uses cancelRequestAnimationFrame() where possible for better performance",
+            "params": [
+                {
+                    "name": "fn",
+                    "description": "The callback function",
+                    "type": "Int|object"
+                }
+            ],
+            "class": "RAF"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nBehaves the same as clearInterval except uses cancelRequestAnimationFrame() where possible for better performance",
+            "line": " src\\are\\util\\RAF.js:48"
+        }
+    ]
+}

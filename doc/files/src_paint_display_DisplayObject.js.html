@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src\paint\display\DisplayObject.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="" width="72" height="72"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Bitmap.html">Bitmap</a></li>
+                                <li><a href="../classes/Container.html">Container</a></li>
+                                <li><a href="../classes/DisplayObject.html">DisplayObject</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/FPS.html">FPS</a></li>
+                                <li><a href="../classes/Loader.html">Loader</a></li>
+                                <li><a href="../classes/Particle.html">Particle</a></li>
+                                <li><a href="../classes/ParticleSystem.html">ParticleSystem</a></li>
+                                <li><a href="../classes/RAF.html">RAF</a></li>
+                                <li><a href="../classes/Shape.html">Shape</a></li>
+                                <li><a href="../classes/Sprite.html">Sprite</a></li>
+                                <li><a href="../classes/Stage.html">Stage</a></li>
+                                <li><a href="../classes/TWEEN.html">TWEEN</a></li>
+                                <li><a href="../classes/Txt.html">Txt</a></li>
+                                <li><a href="../classes/Vector2.html">Vector2</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src\paint\display\DisplayObject.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+﻿/**
+* 显示对象的基类
+*
+* @class DisplayObject
+* @constructor
+*/
+define(&quot;ARE.DisplayObject&quot;, {
+    ctor: function () {
+        this.alpha=this.scaleX = this.scaleY = 1;
+        this.x = this.y = this.rotation = this.originX = this.originY = this.skewX = this.skewY = 0;
+        this.visible = true;
+        this._matrix = new Matrix2D();
+        this.events = {};
+        this.id = UID.get();
+
+        this.baseInstanceof = &quot;DisplayObject&quot;;
+        var self = this;
+        this._watch(this, &quot;originX&quot;, function (prop, value) {
+
+            self.regX = self.width * value;
+        })
+        this._watch(this, &quot;originY&quot;, function (prop, value) {
+            self.regY = self.height * value;
+        })
+    },
+    _watch: function (target, prop, onPropertyChanged) {
+        var self = this, currentValue = target[&quot;__&quot; + prop] = this[prop];
+        Object.defineProperty(target, prop, {
+            get: function () {
+                return this[&quot;__&quot; + prop];
+            },
+            set: function (value) {
+                this[&quot;__&quot; + prop] = value;
+                onPropertyChanged(prop, value);
+            }
+        });
+
+    },
+    /**
+    * 判断是否可见
+    * @method isVisible
+    * @return {Boolean} 如果可见返回true，否则返回false
+    */
+    isVisible: function () {
+        return !!(this.visible &amp;&amp; this.alpha &gt; 0 &amp;&amp; this.scaleX != 0 &amp;&amp; this.scaleY != 0);
+    },
+ /**
+     * To subscribe to multiple events at once, pass an object as the first
+     * argument, where the key:value pairs correspond to the eventName:callback.
+     *
+     *      this.on({
+     *          &quot;attrChange&quot; : this._onAttrChange,
+     *          &quot;change&quot;     : this._onChange
+     *      });
+    *
+    * You can also pass an array of event names as the first argument to
+    * subscribe to all listed events with the same callback.
+    *
+    *      this.on([ &quot;change&quot;, &quot;attrChange&quot; ], this._onChange);
+    *
+    * Returning &#x60;false&#x60; from a callback is supported as an alternative to
+    * calling &#x60;e.preventDefault(); e.stopPropagation();&#x60;.  However, it is
+    * recommended to use the event methods whenever possible.
+    *
+     * 绑定事件
+     * @method on
+     * @param {string} type - 绑定的事件类型.
+     * @param {function} fn - 事件触发的回调函数.
+     */
+    on: function (type, fn) {
+        [&quot;mouseover&quot;, &quot;mousemove&quot;, &quot;mouseout&quot;, &quot;touchstart&quot;, &quot;touchmove&quot;, &quot;touchend&quot;].join(&quot;_&quot;).match(type)&amp;&amp;(Stage.checkMove = true);
+        this.events[type] || (this.events[type] = []);
+        this.events[type].push(fn)
+    },
+    execEvent: function (type) {
+        var fns = this.events[type];
+
+            this._fireFns(fns);
+    },
+    hover: function (over,out) {
+        this.on(&quot;mouseover&quot;, over);
+        this.on(&quot;mouseout&quot;, out);
+    },
+    _fireFns: function (fns) {
+        if (fns) {
+            for (var i = 0, len = fns.length; i &lt; len; i++) {
+                fns[i].call(this);
+            }
+        }
+    },
+    /**
+     * 克隆
+     * @method clone
+     */
+    clone : function() {
+        var o = new DisplayObject();
+        this.cloneProps(o);
+        return o;
+    },
+    cloneProps: function (o) {
+        o.visible = this.visible;
+        o.alpha = this.alpha;
+        o.originX = this.originX;
+        o.originY = this.originY;
+        o.rotation = this.rotation;
+        o.scaleX = this.scaleX;
+        o.scaleY = this.scaleY;
+        o.skewX = this.skewX;
+        o.skewY = this.skewY;
+        o.x = this.x;
+        o.y = this.y;
+        o.regX = this.regX;
+        o.regY = this.regY;
+    },
+    /**
+     * 缓存，4个参数代表要缓存的矩形区域
+     * @method cache
+     * @param {num} x
+     * @param {num} y 
+     * @param {num} width 
+     * @param {num} height
+     */
+    cache : function(x, y, width, height) {
+        // draw to canvas.
+        //scale = scale || 1;
+        if (!this.cacheCanvas) {
+            this.cacheCanvas = document.createElement(&quot;canvas&quot;);
+            this.cacheCanvas.width = width;
+            this.cacheCanvas.height = height;
+            this.cacheCtx = this.cacheCanvas.getContext(&quot;2d&quot;);
+        }
+       
+        //this._cacheScale = scale;
+        
+
+        Stage.renderer.updateCache(this.cacheCtx, this, width, height);
+    },
+    /**
+     * 清除缓存 
+     * @method uncache
+     */
+    uncache: function () {
+        this.cacheCanvas = null;
+    }
+})
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
