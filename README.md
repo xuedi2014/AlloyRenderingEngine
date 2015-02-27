@@ -19,16 +19,34 @@
 # Usage
 
 ```javascript
-var ld = new Loader(), stage = new Stage("#ourCanvas");
+var ld = new Loader(), stage = new Stage("#ourCanvas"),bmp;
 ld.loadRes([
     { id: "atLogo", src: "../asset/img/atLogo.png" }
 ]);
 ld.complete(function () {
-    var bmp = new Bitmap(ld.get("atLogo"));
+    bmp = new Bitmap(ld.get("atLogo"));
+    //（0.5,0.5）==〉The center is the point of rotation
+    bmp.originX = 0.5;
+    bmp.originY = 0.5;
+    bmp.x = 240;
+    bmp.y = 240;
+    //bind click event
     bmp.on("click", function () {
         alert("The event monitor can be accurate to pixel");
     })
+    //add object to stage
     stage.add(bmp);
+           
+    var step = 0.01;
+    //loop
+    stage.onTick(function () {
+        bmp.rotation += 0.5;
+        if (bmp.scaleX > 1.5||bmp.scaleX < 0.5) {
+            step *= -1;
+        }
+        bmp.scaleX += step;
+        bmp.scaleY += step;
+    })
 });
 ```
 This content is released under the (http://opensource.org/licenses/MIT) MIT License.
