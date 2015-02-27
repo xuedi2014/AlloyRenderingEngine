@@ -4,7 +4,6 @@
 * [website](http://alloyteam.github.io/AlloyRenderingEngine/) 
 * [api](http://alloyteam.github.io/AlloyRenderingEngine/doc/)
 # Usage
-
 ```javascript
 var ld = new Loader(), stage = new Stage("#ourCanvas");
 ld.loadRes([
