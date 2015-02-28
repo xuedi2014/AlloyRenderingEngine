@@ -20,23 +20,26 @@
 
 define("Main", ["ARE"], {
     ctor: function () {
-        var ld = new Loader(), pgBmp;
-        var stage = new Stage("#ourCanvas", localStorage.webgl == "1"),bmp;
+        var ld = new Loader(), stage = new Stage("#ourCanvas", localStorage.webgl == "1"), bmp;
         ld.loadRes([
-            { id: "atlogo", src: "../asset/img/atlogo.png" }
+            { id: "atLogo", src: "../asset/img/atLogo.png" }
         ]);
         ld.complete(function () {
-            bmp = new Bitmap(ld.get("atlogo"));
+            bmp = new Bitmap(ld.get("atLogo"));
+            //（0.5,0.5）==〉The center is the point of rotation
             bmp.originX = 0.5;
             bmp.originY = 0.5;
             bmp.x = 240;
             bmp.y = 240;
+            //bind click event
             bmp.on("click", function () {
-                alert("这可是高效并且精确到像素级别的事件触发");
+                alert("The event monitor can be accurate to pixel");
             })
+            //add object to stage
             stage.add(bmp);
            
-            var step=0.01;
+            var step = 0.01;
+            //loop
             stage.onTick(function () {
                 bmp.rotation += 0.5;
                 if (bmp.scaleX > 1.5||bmp.scaleX < 0.5) {

@@ -21,6 +21,7 @@ define("ARE.Bitmap:ARE.DisplayObject", {
      * @param {num} a - 透明度.
      */
     setFilter: function (r, g, b, a) {
+        this.uncache();
         this.cache();
         var imageData = this.cacheCtx.getImageData(0, 0, this.cacheCanvas.width, this.cacheCanvas.height);
 
@@ -33,6 +34,7 @@ define("ARE.Bitmap:ARE.DisplayObject", {
                 pix[i + 3] *= a;
             }
         }
+        this.cacheCtx.clearRect(0, 0, this.cacheCanvas.width, this.cacheCanvas.height);
         this.cacheCtx.putImageData(imageData, 0, 0);
     }
 

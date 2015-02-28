@@ -15,8 +15,7 @@
           { name: "ARE.WebGLRenderer", url: "are/renderer" },
           { name: "ARE.GLMatrix", url: "are/util" },
           { name: "ARE.RAF", url: "are/util" },
-
-		  { name: "ARE.Dom", url: "are/util" }
+          { name: "ARE.Dom", url: "are/util" }
 	]
 });
 

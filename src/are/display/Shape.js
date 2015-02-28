@@ -12,6 +12,10 @@ define("ARE.Shape:ARE.DisplayObject", {
 
         this.assMethod=["fillStyle", "strokeStyle", "lineWidth"];
     },
+    /**
+     * 设置包围盒 
+     * @method getBound
+     */
     setBound: function (w, h) {
         this.width = w;
         this.height = h;

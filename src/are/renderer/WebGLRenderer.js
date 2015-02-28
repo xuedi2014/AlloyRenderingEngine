@@ -213,7 +213,7 @@
         var textureCount = this._textures.length;
 
         for (var i = 0, l = textures.length; i < l; i++) {
-            if (textures[i]._cacheID == o.cacheID) {
+            if (o.cacheID&&textures[i]._cacheID == o.cacheID) {
                 textures[i]._isUsed = true;
                 src.glTexture = textures[i];
                 ctx.activeTexture(ctx["TEXTURE" + textureCount]);
@@ -301,6 +301,7 @@
         // render the element:
         if (mmyCanvas) {
             //this._drawToCache(ctx, o);
+            //document.body.appendChild(mmyCanvas)
             samplerID = this._initCache(o, mmyCanvas, ctx);
             mat4.translate(matrix,	[o.x - o.originX, o.y - o.originY, 0],	mvMatrix);
             mat4.scale(mvMatrix, [o.scaleX * mmyCanvas.width, o.scaleY * mmyCanvas.height, 1]);
@@ -433,7 +434,6 @@
         if (!o.isVisible()) { return; }
         // render the element:
         if (o instanceof Bitmap) {
-
             ctx.drawImage(o.img, 0, 0);
         } else if (o instanceof Container || o instanceof Stage) {
             var list = o.children.slice(0);
