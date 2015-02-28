@@ -49,4 +49,6 @@ ld.complete(function () {
     })
 });
 ```
+result:
+![usage](https://raw.githubusercontent.com/AlloyTeam/AlloyRenderingEngine/master/asset/img/usage.gif)
 This content is released under the (http://opensource.org/licenses/MIT) MIT License.
