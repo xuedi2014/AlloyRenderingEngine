@@ -17,7 +17,9 @@
 * [txt](http://alloyteam.github.io/AlloyRenderingEngine/showcase/txt.html) 
 
 # Usage
-
+To achieve this effect:
+![usage](https://raw.githubusercontent.com/AlloyTeam/AlloyRenderingEngine/master/asset/img/usage.gif)
+need to use the following code：
 ```javascript
 var ld = new Loader(), stage = new Stage("#ourCanvas"),bmp;
 ld.loadRes([
@@ -49,6 +51,5 @@ ld.complete(function () {
     })
 });
 ```
-result:
-![usage](https://raw.githubusercontent.com/AlloyTeam/AlloyRenderingEngine/master/asset/img/usage.gif)
+
 This content is released under the (http://opensource.org/licenses/MIT) MIT License.
