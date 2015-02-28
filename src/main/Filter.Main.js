@@ -24,10 +24,10 @@ define("Main", ["ARE"], {
         var ld = new Loader(), bmp;
         var stage = new Stage("#ourCanvas", localStorage.webgl == "1");
         ld.loadRes([
-            { id: "atlogo", src: "../asset/img/atlogo.png" }
+            { id: "atLogo", src: "../asset/img/atLogo.png" }
         ]);
         ld.complete(function () {
-            bmp = new Bitmap(ld.get("atlogo"));
+            bmp = new Bitmap(ld.get("atLogo"));
             bmp.x = 110;
             bmp.y = 100;
             bmp.setFilter(1, 0.75, 1,1);
