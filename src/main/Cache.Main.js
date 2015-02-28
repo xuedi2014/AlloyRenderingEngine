@@ -22,7 +22,7 @@
 define("Main", ["ARE"], {
     ctor: function () {
         var ld = new Loader(), pgBmp;
-        var stage = new Stage("#ourCanvas", true);
+        var stage = new Stage("#ourCanvas", localStorage.webgl == "1");
 
         var shapes = [], radius = 40;
         for (var i = 0; i < 200; i++) {

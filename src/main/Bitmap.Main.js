@@ -20,19 +20,17 @@
 
 define("Main", ["ARE"], {
     ctor: function () {
-        var ld = new Loader(), pgBmp;
-        var stage = new Stage("#ourCanvas", localStorage.webgl == "1");
+        var ld = new Loader(), stage = new Stage("#ourCanvas", localStorage.webgl == "1");
         ld.loadRes([
-            { id: "atlogo", src: "../asset/img/atlogo.png" }
-            ]);
+            { id: "atLogo", src: "../asset/img/atLogo.png" }
+        ]);
         ld.complete(function () {
-            var bmp = new Bitmap(ld.get("atlogo"));
-            bmp.x = 110;
-            bmp.y = 100;
+            var bmp = new Bitmap(ld.get("atLogo"));
             bmp.on("click", function () {
-                alert("这可是高效并且精确到像素级别的事件触发");
+                alert("The event monitor can be accurate to pixel");
             })
             stage.add(bmp);
-        });  
+            bmp.toCenter();
+        });
     }
 })

@@ -44,24 +44,7 @@ define("ARE.DisplayObject", {
     isVisible: function () {
         return !!(this.visible && this.alpha > 0 && this.scaleX != 0 && this.scaleY != 0);
     },
- /**
-     * To subscribe to multiple events at once, pass an object as the first
-     * argument, where the key:value pairs correspond to the eventName:callback.
-     *
-     *      this.on({
-     *          "attrChange" : this._onAttrChange,
-     *          "change"     : this._onChange
-     *      });
-    *
-    * You can also pass an array of event names as the first argument to
-    * subscribe to all listed events with the same callback.
-    *
-    *      this.on([ "change", "attrChange" ], this._onChange);
-    *
-    * Returning `false` from a callback is supported as an alternative to
-    * calling `e.preventDefault(); e.stopPropagation();`.  However, it is
-    * recommended to use the event methods whenever possible.
-    *
+     /**
      * 绑定事件
      * @method on
      * @param {string} type - 绑定的事件类型.
@@ -122,10 +105,10 @@ define("ARE.DisplayObject", {
         if (!this.cacheCanvas) {
             this.cacheCanvas = document.createElement("canvas");
             var bound = this.getBound();
-            this.cacheCanvas.width =bound.width;
+            this.cacheCanvas.width = bound.width;
             this.cacheCanvas.height = bound.height;
             this.cacheCtx = this.cacheCanvas.getContext("2d");
-        }
+        } 
        
         //this._cacheScale = scale;
         
@@ -138,6 +121,8 @@ define("ARE.DisplayObject", {
      */
     uncache: function () {
         this.cacheCanvas = null;
+        this.cacheCtx = null;
+        this.cacheID=null;
     },
     /**
      * 获取包围盒 
@@ -145,5 +130,15 @@ define("ARE.DisplayObject", {
      */
     getBound: function () {
         return { width: this.width, height: this.height };
+    },
+    /**
+     * 定位至父容器中心 
+     * @method toCenter
+     */
+    toCenter: function () {
+        this.originX = 0.5;
+        this.originY = 0.5;
+        this.x = this.parent.width / 2;
+        this.y = this.parent.height / 2;;
     }
 })

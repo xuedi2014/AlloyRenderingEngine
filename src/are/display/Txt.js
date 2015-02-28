@@ -1,4 +1,5 @@
-﻿//http://www.w3.org/TR/2dcontext/#dom-context-2d-filltext
+﻿//many thanks to http://delphic.me.uk/webgltext.html
+//http://www.w3.org/TR/2dcontext/#dom-context-2d-filltext
 //http://www.w3school.com.cn/tags/canvas_filltext.asp
 /**
 * 文本对象
