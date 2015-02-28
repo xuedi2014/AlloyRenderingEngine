@@ -19,7 +19,7 @@
 # Usage
 To achieve this effect:
 
-![usage](https://raw.githubusercontent.com/AlloyTeam/AlloyRenderingEngine/master/asset/img/usage.gif)
+![usage](https://raw.githubusercontent.com/AlloyTeam/AlloyRenderingEngine/master/asset/img/usage2.gif)
 
 You need to use the following code:
 
