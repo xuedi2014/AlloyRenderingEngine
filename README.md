@@ -18,8 +18,11 @@
 
 # Usage
 To achieve this effect:
+
 ![usage](https://raw.githubusercontent.com/AlloyTeam/AlloyRenderingEngine/master/asset/img/usage.gif)
-need to use the following code：
+
+You need to use the following code：
+
 ```javascript
 var ld = new Loader(), stage = new Stage("#ourCanvas"),bmp;
 ld.loadRes([
