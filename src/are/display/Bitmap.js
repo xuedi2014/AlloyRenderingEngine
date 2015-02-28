@@ -34,7 +34,6 @@ define("ARE.Bitmap:ARE.DisplayObject", {
                 pix[i + 3] *= a;
             }
         }
-        this.cacheCtx.clearRect(0, 0, this.cacheCanvas.width, this.cacheCanvas.height);
         this.cacheCtx.putImageData(imageData, 0, 0);
     }
 
